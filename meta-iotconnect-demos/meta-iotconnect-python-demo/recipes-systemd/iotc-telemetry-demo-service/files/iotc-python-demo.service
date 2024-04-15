@@ -1,0 +1,14 @@
+[Unit]
+Description= iotconnect python service, runs forever
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/root/iotc-application.sh
+Restart=always
+StandardOutput=journal+console
+StandardError=journal+console
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,22 @@
+From 0dca16e05d3f3eb889681c239ea1be7c7244b13a Mon Sep 17 00:00:00 2001
+From: Alen Karnil <akarnil@witekio.com>
+Date: Tue, 9 Apr 2024 11:57:57 +0100
+Subject: [PATCH] curl-fix
+
+---
+ iotc-generic-c-sdk/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/iotc-generic-c-sdk/CMakeLists.txt b/iotc-generic-c-sdk/CMakeLists.txt
+index 03cf589..54c46dd 100644
+--- a/iotc-generic-c-sdk/CMakeLists.txt
++++ b/iotc-generic-c-sdk/CMakeLists.txt
+@@ -43,7 +43,7 @@ ELSE ()
+     target_link_libraries(iotc-c-generic-sdk paho-mqtt3cs)
+ ENDIF ()
+ 
+-IF (CMAKE_TOOLCHAIN_FILE)
++IF (VCPKG_TOOLCHAIN)
+     # not the best way to detect VCPKG, but we'll go with that
+     find_package(CURL CONFIG REQUIRED)
+ ELSE ()
