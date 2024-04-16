@@ -36,7 +36,7 @@ FILES:${PN} += "/lib/* \
   /iotc-generic-c-sdk/* \
 "
 
-RDEPENDS:${PN} = "systemd \
+RDEPENDS:${PN} = " \
 	bash \
 	perl \
 	make \

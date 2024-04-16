@@ -13,6 +13,7 @@ DISTUTILS_SETUP_PATH = "${WORKDIR}/git/iotconnect-sdk-1.0"
 inherit setuptools3
 
 
+RDEPENDS:${PN} += " python3"
 RDEPENDS:${PN} += " python3-pip"
 
 RDEPENDS:${PN} += " python3-ntplib"
