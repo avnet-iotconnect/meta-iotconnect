@@ -21,7 +21,7 @@ inherit cmake
 # Specify any options you want to pass to cmake using EXTRA_OECMAKE:
 EXTRA_OECMAKE = ""
 
-cmake_do_generate_toolchain_file:append() {
+cmake_do_generate_toolchain_file_append() {
 	cat >> ${WORKDIR}/toolchain.cmake <<EOF
 $cmake_crosscompiling
 
@@ -32,20 +32,20 @@ EOF
 
 PACKAGES = "${PN} ${PN}-dev ${PN}-dbg ${PN}-staticdev"
 
-FILES:${PN} += "/lib/* \
+FILES_${PN} += "/lib/* \
   /iotc-generic-c-sdk/* \
 "
 
-RDEPENDS:${PN} = "systemd \
+RDEPENDS_${PN} = " \
 	bash \
 	perl \
 	make \
 	ruby \
 "
 
-RDEPENDS:${PN}-staticdev = ""
-RDEPENDS:${PN}-dev = ""
-RDEPENDS:${PN}-dbg = ""
+RDEPENDS_${PN}-staticdev = ""
+RDEPENDS_${PN}-dev = ""
+RDEPENDS_${PN}-dbg = ""
 
 do_populate_sysroot() {
     mkdir -p ${SYSROOT_DESTDIR}/lib

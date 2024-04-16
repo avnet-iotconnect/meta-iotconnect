@@ -13,11 +13,12 @@ DISTUTILS_SETUP_PATH = "${WORKDIR}/git/iotconnect-sdk-1.0"
 inherit setuptools3
 
 
-RDEPENDS:${PN} += " python3-pip"
+RDEPENDS_${PN} += " python3"
+RDEPENDS_${PN} += " python3-pip"
 
-RDEPENDS:${PN} += " python3-ntplib"
-RDEPENDS:${PN} += " python3-paho-mqtt"
-RDEPENDS:${PN} += " python3-wheel"
+RDEPENDS_${PN} += " python3-ntplib"
+RDEPENDS_${PN} += " python3-paho-mqtt"
+RDEPENDS_${PN} += " python3-wheel"
 
 distutils_do_configure () {
 	# Specify any needed configure commands here
