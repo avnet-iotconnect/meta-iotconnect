@@ -14,12 +14,13 @@ SRCREV = "701906f8f70a25273830e7c19cb631c09da1a2f1"
 S = "${WORKDIR}/git/iotc-generic-c-sdk"
 C = "${WORKDIR}/git"
 
-DEPENDS = "curl"
+DEPENDS += " curl"
+DEPENDS += " pkgconfig"
+DEPENDS += " openssl"
+DEPENDS += " util-linux"
 
 inherit cmake
-
-# Specify any options you want to pass to cmake using EXTRA_OECMAKE:
-EXTRA_OECMAKE = ""
+EXTRA_OECMAKE += "-DCMAKE_SKIP_RPATH=TRUE"
 
 cmake_do_generate_toolchain_file:append() {
 	cat >> ${WORKDIR}/toolchain.cmake <<EOF
