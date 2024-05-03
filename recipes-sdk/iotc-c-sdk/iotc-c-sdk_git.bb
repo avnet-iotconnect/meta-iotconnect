@@ -55,11 +55,11 @@ do_populate_sysroot() {
     cp -r --no-preserve=ownership ${C}/iotc-generic-c-sdk ${SYSROOT_DESTDIR}/
 }
 
-# Create /usr/bin in rootfs and copy program to it
-do_install() {
-    mkdir -p ${D}/lib
-    cp -r --no-preserve=ownership ${C}/lib/* ${D}/lib/
-    rm -r ${D}/lib/paho.mqtt.c/test/python
-    cp -r --no-preserve=ownership ${C}/iotc-generic-c-sdk ${D}/
-}
+# # Create /usr/bin in rootfs and copy program to it
+# do_install() {
+#     mkdir -p ${D}/lib
+#     cp -r --no-preserve=ownership ${C}/lib/* ${D}/lib/
+#     rm -r ${D}/lib/paho.mqtt.c/test/python
+#     cp -r --no-preserve=ownership ${C}/iotc-generic-c-sdk ${D}/
+# }
 
