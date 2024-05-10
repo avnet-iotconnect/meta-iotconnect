@@ -9,7 +9,7 @@ SRC_URI = "gitsm://github.com/avnet-iotconnect/iotc-generic-c-sdk.git;protocol=h
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "701906f8f70a25273830e7c19cb631c09da1a2f1"
+SRCREV = "de6401e47a884a3aac7f8daf2667b168459350c3"
 
 S = "${WORKDIR}/git/iotc-generic-c-sdk"
 C = "${WORKDIR}/git"
