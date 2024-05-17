@@ -1,4 +1,4 @@
-<!---(url)[![build](https://github.com/avnet-iotconnect/meta-iotconnect/actions/workflows/build-and-longtest.yml/badge.svg?branch=kirkstone)](https://github.com/avnet-iotconnect/meta-iotconnect/actions/workflows/build-and-longtest.yml) --->
+[![build](https://github.com/avnet-iotconnect/meta-iotconnect/actions/workflows/build-sdk-image.yml/badge.svg?branch=kirkstone)](https://github.com/avnet-iotconnect/meta-iotconnect/actions/workflows/build-sdk-image.yml)
 
 # IoT-Connect Yocto Integration meta-layer
 This repository is a Yocto meta layer for providing recipes for the IoT-Connect [C](https://github.com/avnet-iotconnect/iotc-generic-c-sdk/tree/main/) and [Python](https://github.com/avnet-iotconnect/iotc-python-sdk/tree/master-std-21) SDKs.
