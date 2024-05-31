@@ -33,7 +33,8 @@ jobs:
           GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git clone https://github.com/avnet-iotconnect/meta-iotconnect.git -b kirkstone ../../sources/meta-iotconnect
           bitbake-layers add-layer ../../sources/meta-iotconnect
           bitbake ${{ github.event.inputs.yocto-image }}
-          cd /home/pokyuser/MaaXBoard_IoTC_kirkstone/maaxboard/build/tmp/deploy/images/maaxboard/ 
+          cd /home/pokyuser/
+          cp /home/pokyuser/MaaXBoard_IoTC_kirkstone/maaxboard/build/tmp/deploy/images/maaxboard/${{ github.event.inputs.yocto-image }}-maaxboard.wic .
           gzip -v ${{ github.event.inputs.yocto-image }}-maaxboard.wic
         shell: bash {0}
       - uses: hkusu/s3-upload-action@v2.1.0
@@ -43,7 +44,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: 'us-east-1'
           aws-bucket: 'iotconnect-sdk-images'
-          file-path: /home/pokyuser/MaaXBoard_IoTC_kirkstone/maaxboard/build/tmp/deploy/images/maaxboard/${{ github.event.inputs.yocto-image }}-maaxboard.wic.gz
+          file-path: /home/pokyuser/${{ github.event.inputs.yocto-image }}-maaxboard.wic.gz
           destination-dir: '/'
           bucket-root: 'sdk-images'
           public: true
