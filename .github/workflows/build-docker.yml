@@ -1,9 +1,9 @@
-name: build-stm32m1-docker
+name: build-docker
 
 on:
   workflow_dispatch:
 jobs:
-  build-docker-stm32m1:
+  build-docker:
     runs-on: [self-hosted, build]
     steps:
       - name: Checkout simplecore-tools
@@ -24,16 +24,16 @@ jobs:
       - name:  Build and push to GHCR
         uses: docker/build-push-action@v5
         with:
-          context: docker/.github/stm32mp157-docker
+          context: docker/.github/build-docker
           push: true
-          tags: ghcr.io/avnet-iotconnect/meta-iotconnect/stm32mp157-iotc-sdk-kirkstone:latest
+          tags: ghcr.io/avnet-iotconnect/meta-iotconnect/build-iotc-sdk-kirkstone:latest
 
   clean:
     runs-on: [self-hosted, build]
     if: always()
     needs:
       [
-        build-docker-stm32m1
+        build-docker
       ]
     steps:
       - name: "clean build dir"
