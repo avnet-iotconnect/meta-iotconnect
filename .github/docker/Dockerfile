@@ -9,6 +9,7 @@ RUN apt-get update && \
     libmpc-dev \
     libssl-dev \
     python3-pip \
+    curl \
     zip \
     rsync
 
