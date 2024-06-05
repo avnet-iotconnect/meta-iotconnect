@@ -1,4 +1,4 @@
-FROM crops/poky:ubuntu-22.04
+FROM crops/poky:ubuntu-20.04
 
 USER root
 RUN apt-get update && \
