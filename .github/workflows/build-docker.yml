@@ -26,7 +26,7 @@ jobs:
         with:
           context: docker/.github/docker
           push: true
-          tags: ghcr.io/avnet-iotconnect/meta-iotconnect/build-iotc-sdk-kirkstone:latest
+          tags: ghcr.io/avnet-iotconnect/meta-iotconnect/build-iotc-sdk-dunfell:latest
 
   clean:
     runs-on: [self-hosted, build]

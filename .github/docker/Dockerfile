@@ -10,9 +10,9 @@ RUN apt-get update && \
     libssl-dev \
     python3-pip \
     zip \
-    rsync \
-    repo
+    rsync
 
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo
 RUN groupadd pokyuser -g1000 && useradd pokyuser -u 1000 -g 1000 -m -s /bin/bash && chown -R 1000:1000 /home/pokyuser && mkdir -m 1777 /__w
 USER pokyuser
 WORKDIR /home/pokyuser
